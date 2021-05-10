@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>deConcesionarias</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+            crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+            crossorigin="anonymous"></script>
+    </head>
+
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">deConcesionarias</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
+                    class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
+                        aria-describedby="basic-addon2" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Principal</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
+                                aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                                data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                                aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                                data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#pagesCollapseAuth" aria-expanded="false"
+                                        aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                        data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#pagesCollapseError" aria-expanded="false"
+                                        aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                        data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Adm dec 001
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <!-- Voy a dividir el flujo de Seguros en Containers que voy a manejar con hidden/Visible para simular un SPA.-->
+
+                    <div class="container-fluid">
+                        <h1 class="mt-4 text-center">Seguros</h1>
+                        <h4 class="mb-4 text-center text-secondary">Cotizar en 5 pasos</h4>
+
+                        <!-- Seguros 1 -->
+                        <!-- ----------------------------------------------------------------------------------------------------------------Aqui vamos a cargar el Auto -->
+                        <div class="container-fluid align-items-center" id="cargarVehiculos">
+                            <div class="row mb-2 justify-content-center">
+                                <button type="button" id="fotoAuto" class="btn-danger rounded-circle btn-lg"
+                                    data-toggle="modal" data-target="#carModal"><i class="fa fa-camera"
+                                        aria-hidden="true"></i><br>Cargar</button>
+                            </div>
+
+                            <!-- Modal de Carga -->
+                            <div class="modal fade" id="carModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-block">
+                                            <h5 class="modal-title text-center" id="carModalLabel">Escaneo del
+                                                Dominio</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <video height='450' autoplay muted playsinline controls>
+                                                <source src="/dist/assets/img/kiaScan.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Rechazar</button>
+                                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                id="cargarAutoScan">Aceptar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" id="dominio" class="form-control bg-light border-danger"
+                                    placeholder="Dominio">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled class="form-control bg-light" id="marca"
+                                    placeholder="Escribí la Marca...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id="modelo" class="form-control bg-light"
+                                    placeholder="Escribí el Modelo...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id="year" class="form-control bg-light"
+                                    placeholder="Escribí el año...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='version' class="form-control bg-light"
+                                    placeholder="Escribí la version...">
+                            </div>
+                            <div class="row justify-content-center">
+                                <!-- Default switch -->
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input confGNC" id="customSwitchesGNC">
+                                    <label class="custom-control-label" for="customSwitchesGNC">Con GNC</label>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <input type="email" id="mail" class="form-control bg-light" placeholder="Email...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" id="tel" class="form-control bg-light" placeholder="Teléfono...">
+                            </div>
+                            <!-- Agregar link aquei para que te lleve a la pagina de persona!-->
+                            <div class="row m-2 justify-content-center">
+                                <a href="#" id="seguro1" class="btn btn-outline-success btn-lg btn-block">Siguiente</a>
+                            </div>
+                        </div>
+                        <!-- Seguro 2: Datos Personals -->
+                        <!-- ----------------------------------------------------------------------------------------------------------------Aqui voy a realizar la carga de los datos de la Persona -->
+                        <div class="container-fluid align-items-center" id="cargarPersonas" hidden>
+                            <div class="row mb-2 justify-content-center">
+                                <button type="button" id="fotoDNI" class="btn-danger rounded-circle btn-lg"
+                                    data-toggle="modal" data-target="#dniModal"><i class="fa fa-camera"
+                                        aria-hidden="true"></i><br>Escanear</button>
+                            </div>
+
+                            <!-- Modal de DNI -->
+                            <div class="modal fade" id="dniModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-block">
+                                            <h5 class="modal-title text-center" id="dniModalLabel">Escaneo del
+                                                DNI</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <video height='450' autoplay muted playsinline controls>
+                                                <source src="/dist/assets/img/dniScan.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Rechazar</button>
+                                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                id="cargarDNIScan">Aceptar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" id='dni' class="form-control bg-light border-danger"
+                                    placeholder="DNI">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='nombre' class="form-control bg-light"
+                                    placeholder="Escribí tu nombre y Apellido">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="date" disabled id='dob' class="form-control bg-light"
+                                    placeholder="Escribí tu Fecha de Nacimiento ...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='domicilio' class="form-control bg-light"
+                                    placeholder="Escribí tu Domicilio...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='localidad' class="form-control bg-light"
+                                    placeholder="Escribí Localidad...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='provincia' class="form-control bg-light"
+                                    placeholder="Escribí Provincia...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='cp' class="form-control bg-light"
+                                    placeholder="Escribí Codigo Postal...">
+                            </div>
+                            <div class="row mb-2"><input type="text" id='estadoCivil' class="form-control bg-light"
+                                    placeholder="Estado Civil">
+                            </div>
+                            <div class="row justify-content-center">
+                                <!-- Default switch -->
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input confDatos"
+                                        id="customSwitchesData">
+                                    <label class="custom-control-label" for="customSwitchesData">Confirmar Datos</label>
+                                </div>
+                            </div>
+                            <!-- Agregar link aqui para que te lleve a la pagina de persona!-->
+                            <div hidden class="row m-2 justify-content-center" id="cotizarSeguros">
+                                <a href="#" class="btn btn-outline-success btn-lg btn-block">Cotizar</a>
+                            </div>
+                        </div>
+                        <!-- Seguro3:  Visualizar las cotizaciones-->
+                        <!-- ----------------------------------------------------------------------------------------------------------------Aqui vamos a simular 4 distintos seguros para que el cliente puede elegir -->
+                        <div class="container-fluid align-items-center" id="seguroCotizaciones" hidden>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card contratar bg-secondary text-white mb-4">
+                                        <div class="card-body">Seguro 1</div>
+                                        <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link" href="#">Contratar</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="card contratar bg-secondary text-white mb-4">
+                                        <div class="card-body">Seguro 2</div>
+                                        <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link" href="#">Contratar</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="card contratar bg-secondary text-white mb-4">
+                                        <div class="card-body">Seguro 3</div>
+                                        <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link" href="#">Contratar</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="card contratar bg-secondary text-white mb-4">
+                                        <div class="card-body">Seguro 4</div>
+                                        <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link" href="#">Contratar</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-2 justify-content-center">
+                                <a href="#" class="btn btn-outline-success btn-lg btn-block contratar">Contratar</a>
+                            </div>
+                        </div>
+                        <!-- Seguro 4: Confirmar datos y contratar -->
+                        <!-- ----------------------------------------------------------------------------------------------------------------Aqui el usuario tendria que confirmar todos los datos del auto y de la persona -->
+                        <div class="container-fluid alig-items-center" id="confirmarDatos" hidden>
+                            <!-- Agregar lista de checkeo de todos los datos vistos antes -->
+                            <!--                                                  
+                            Marca
+                            Modelo
+                            Versión
+                            Año
+                            No de Motor
+                            No de Chasis -->
+                            <form id="confirmForm">
+                                <h6>Datos del Vehículo</h6>
+                                <div class="form-group row text-wrap">
+                                    <label for="inputDominio" class="col-3 col-form-label">Dominio</label>
+                                    <div class="col-9"><input type="text" id='inputDominio'
+                                            class="form-control bg-light" placeholder="Dominio"></div>
+                                    <label for="inputMarca" class="col-3 col-form-label">Marca</label>
+                                    <div class="col-9"><input type="text" id='inputMarca' class="form-control bg-light"
+                                            placeholder="Marca">
+                                    </div>
+                                    <label for="inputModelo" class="col-3 col-form-label">Modelo</label>
+                                    <div class="col-9"><input type="text" id='inputModelo' class="form-control bg-light"
+                                            placeholder="Modelo">
+                                    </div>
+                                    <label for="inputVersion" class="col-3 col-form-label">Version</label>
+                                    <div class="col-9"><input type="text" id='inputVersion'
+                                            class="form-control bg-light" placeholder="Version">
+                                    </div>
+                                    <label for="inputAnio" class="col-3 col-form-label">Año</label>
+                                    <div class="col-9"><input type="text" id='inputYear' class="form-control bg-light"
+                                            placeholder="Año">
+                                    </div>
+                                    <label for="inputMotor" class="col-3 col-form-label">Motor</label>
+                                    <div class="col-9"><input type="text" id='inputMotor' class="form-control bg-light"
+                                            placeholder="Numero de Motor">
+                                    </div>
+                                    <label for="inputChasis" class="col-3 col-form-label">Chasis</label>
+                                    <div class="col-9"><input type="text" id='inputChasis' class="form-control bg-light"
+                                            placeholder="Numero de Chasis">
+                                    </div>
+                                    <label for="inputValor" class="col-3 col-form-label">Valor</label>
+                                    <div class="col-9"><input type="text" id='inputValor' class="form-control bg-light"
+                                            placeholder="$000.000">
+                                    </div>
+
+                                </div>
+                                <h6 class="mt-2">Datos de la Persona</h6>
+                                <div class="form-group row">
+                                    <label for="inputDNI" class="col-3 col-form-label">DNI</label>
+                                    <div class="col-9"><input type="text" id='inputDNI' class="form-control bg-light"
+                                            placeholder="DNI"></div>
+                                    <label for="inputNombre" class="col-3 col-form-label">Nombre</label>
+                                    <div class="col-9"><input type="text" id='inputNombre' class="form-control bg-light"
+                                            placeholder="Nombre y Apellido">
+                                    </div>
+                                    <label for="inputSexo" class="col-3 col-form-label">Sexo</label>
+                                    <div class="col-9"><input type="text" id='inputSexo' class="form-control bg-light"
+                                            placeholder="Sexo">
+                                    </div>
+                                    <label for="inputDOB" class="col-3 col-form-label">Nacimiento</label>
+                                    <div class="col-9"><input type="text" id='inputDOB' class="form-control bg-light"
+                                            placeholder="Fecha de Nacimiento">
+                                    </div>
+                                    <label for="inputDomicilio" class="col-3 col-form-label">Domicilio</label>
+                                    <div class="col-9"><input type="text" id='inputDomicilio'
+                                            class="form-control bg-light" placeholder="Domicilio">
+                                    </div>
+                                    <label for="inputLocalidad" class="col-3 col-form-label">Localidad</label>
+                                    <div class="col-9"><input type="text" id='inputLocalidad'
+                                            class="form-control bg-light" placeholder="Localidad">
+                                    </div>
+                                    <label for="inputProvincia" class="col-3 col-form-label">Provincia</label>
+                                    <div class="col-9"><input type="text" id='inputProvincia'
+                                            class="form-control bg-light" placeholder="Provincia">
+                                    </div>
+                                    <label for="inputCP" class="col-3 col-form-label">CP</label>
+                                    <div class="col-9"><input type="text" id='inputCP' class="form-control bg-light"
+                                            placeholder="Codigo Postal">
+                                    </div>
+                                    <label for="inputMail" class="col-3 col-form-label mt-2">Mail</label>
+                                    <div class="col-9"><input type="email" id='inputMail'
+                                            class="form-control bg-light mt-2" placeholder="Email">
+                                    </div>
+                                    <label for="inputTel" class="col-3 col-form-label">Teléfono</label>
+                                    <div class="col-9"><input type="text" id='inputTel' class="form-control bg-light"
+                                            placeholder="Teléfono">
+                                    </div>
+                                    <label for="inputEstado" class="col-3 col-form-label">Estado C.</label>
+                                    <div class="col-9"><input type="text" id='inputEstado' class="form-control bg-light"
+                                            placeholder="Estado Civil">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="container-fluid align-items-center" id="btnConfirmDatos">
+                                <div class="row m-2 justify-content-center">
+                                    <a href="#" class="btn btn-outline-success btn-lg btn-block">Confirmar
+                                        Datos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Seguros 5: Portal de Pago -->
+                        <!-- ----------------------------------------------------------------------------------------------------------------Aqui vamo sa mostrar una pagina de Pagos -->
+                        <div class="container-fluid align-items-center" id="seguros5Pago" hidden>
+                            <!-- Nombre en Tarjeta + Input
+                            Card Number en Grupos de 4
+                        Expiry date [MM] [YY] [CVC]
+                    Pais CP  -->
+                            <div class="row align-items-center my-3">
+                                <button type="button" class="btn btn-outline-primary btn-sm col mx-2"
+                                    id="buttonTC">TC</button>
+
+                                <button type="button" class="btn btn-outline-secondary btn-sm col mx-2"
+                                    id="buttonCBU">CBU</button>
+                            </div>
+                            <div class="row justify-content-center my-2" hidden id="divScanTC">
+                                <button type="button" id="btnScanTC" class="btn-outline-danger rounded btn-sm"
+                                    data-toggle="modal" data-target="#TCModal"><i class="fa fa-camera"
+                                        aria-hidden="true"></i><br>Escanear TC</button>
+
+                                <!-- Modal de DNI -->
+                                <div class="modal fade" id="TCModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header d-block">
+                                                <h5 class="modal-title text-center" id="TCModalLabel">Escaneo del
+                                                    TC</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <video height='450' autoplay muted playsinline controls>
+                                                    <source src="/dist/assets/img/scanTC.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Rechazar</button>
+                                                <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                    id="cargarTCScan">Aceptar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="mt-3" hidden id="formCBU">
+                                <div class="form-group row">
+                                    <label for="inputCBU" class="col-2 col-form-label">CBU</label>
+                                    <div class="col-10">
+                                        <input type="number" class="form-control" id="inputCBU" placeholder="CBU">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputTitular" class="col-2 col-form-label">Titular</label>
+                                    <div class="col-10">
+                                        <input type="text" class="form-control" id="inputTitular" placeholder="Titular">
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="align-items-center mt-3" id="formTC" hidden>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCardName">Nombre en la Tarjeta</label>
+                                        <input type="text" class="form-control" id="inputCardName">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCardNum">Numero de Tarjeta</label>
+                                        <input type="text" class="form-control" id="inputCardNum"
+                                            placeholder="0000 0000 0000 0000">
+                                    </div>
+                                    <div class="form-group col-md-1 col-3">
+                                        <label for="inputExpMM">Vto.</label>
+                                        <input type="number" class="form-control" id="inputExpMM" placeholder="MM">
+                                    </div>
+                                    <div class="form-group col-md-1 col-3">
+                                        <label for="inputExpAA" class="text-white">1 </label>
+                                        <input type="number" class="form-control" id="inputExpAA" placeholder="AA">
+                                    </div>
+                                    <div class="form-group col-md-4 col-6">
+                                        <label for="inputCardCVC">CVC</label>
+                                        <input type="password" class="form-control" id="inputCardCVC" placeholder="CVC">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">Provincia</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Elige...</option>
+                                            <option>Provincia1</option>
+                                            <option>Provincia2</option>
+                                            <option>Provincia3</option>
+                                            <option>Provincia4</option>
+                                            <option>Provincia5</option>
+                                            <option>Provincia6</option>
+                                            <option>Provincia7</option>
+                                            <option>Provincia8</option>
+                                            <option>Provincia9</option>
+                                            <option>Provincia10</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputZip">Codigo Postal</label>
+                                        <input type="number" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- <div class="row m-2 justify-content-center">
+                                <a href="#" id="seguroPago"
+                                    class="btn btn-outline-success btn-lg btn-block rounded">Confirmar
+                                    Operación</a>
+                            </div> -->
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-success btn-lg btn-block rounded"
+                                data-toggle="modal" data-target="#exampleModal">
+                                Confirmar Operación
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Terminos & Condiciones</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima distinctio
+                                            nihil nisi? Tenetur eos pariatur accusamus! Beatae molestias, autem libero
+                                            placeat expedita laborum fuga!
+                                            <br>Sequi ullam quisquam earum sed ipsa?
+                                            Delectus pariatur necessitatibus, ducimus reiciendis quas unde eum
+                                            laboriosam praesentium, corrupti, placeat ab dignissimos mollitia. Deserunt
+                                            pariatur minus soluta laboriosam harum.<br> Itaque ducimus ab molestias
+                                            repudiandae aliquid sunt! Sit, eos.
+                                            Dolorem, nobis ducimus labore quisquam sint corporis. Maiores doloremque eum
+                                            veritatis quas inventore error ea? Corporis similique dolorem quae. Unde
+                                            optio cum libero numquam molestias sapiente, consequuntur distinctio
+                                            reiciendis doloremque?
+                                            <br>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima distinctio
+                                            nihil nisi? Tenetur eos pariatur accusamus! Beatae molestias, autem libero
+                                            placeat expedita laborum fuga!
+                                            <br>Aceptas los T&Cs de la poliza?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Rechazar</button>
+                                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                id="aceptarTCs">Aceptar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">Cotizar</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">Administrar</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">Clientes</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">Administrar</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">Seguros</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">Cotizar</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">Prestamos</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">Aplicar</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; deConcesionarias 2020</div>
+                            <div>
+                                <a href="#">Política de Privacidad</a>
+                                &middot;
+                                <a href="#">Terminos &amp; Condiciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+            crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
+            crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+        <Script src="/dist/js/seguros.js"></Script>
+    </body>
+
+</html>

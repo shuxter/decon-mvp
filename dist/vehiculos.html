@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>deConcesionarias</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+            crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+            crossorigin="anonymous"></script>
+    </head>
+
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">deConcesionarias</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
+                    class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
+                        aria-describedby="basic-addon2" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Principal</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
+                                aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                                data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                                aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                                data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#pagesCollapseAuth" aria-expanded="false"
+                                        aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                        data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#pagesCollapseError" aria-expanded="false"
+                                        aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                        data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Adm dec 001
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4 text-center">TuConcesionaria</h1>
+                        <h4 class="mb-4 text-center text-secondary">Vehículos</h4>
+                        <!-- <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active text-center">Productos</li>
+                        </ol> -->
+                        <div class="row" id="options">
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-6" id="opcionPublicar">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body text-center">Publicar</div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body text-center">Cargar</div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body text-center">Tasar</div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body text-center">Reservar 4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Agregar el HTML para la carga del vehiculo -->
+                    <div class="container-fluid align-items-center" id="cargarVehiculos" hidden>
+                        <div class="row mb-2 justify-content-center">
+                            <button type="button" id="fotoAuto" class="btn-danger rounded-circle btn-lg"
+                                data-toggle="modal" data-target="#carModal"><i class="fa fa-camera"
+                                    aria-hidden="true"></i><br>Cargar</button>
+                        </div>
+
+                        <!-- Modal de Carga -->
+                        <div class="modal fade" id="carModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header d-block">
+                                        <h5 class="modal-title text-center" id="carModalLabel">Escaneo del
+                                            Dominio</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <video height='450' autoplay muted playsinline controls>
+                                            <source src="/dist/assets/img/kiaScan.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Rechazar</button>
+                                        <button type="button" class="btn btn-success" data-dismiss="modal"
+                                            id="cargarAutoScan">Aceptar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="form-row mb-2">
+                                <input type="text" id="dominio" class="form-control bg-light border-danger"
+                                    placeholder="Dominio">
+                            </div>
+                            <div class="form-row mb-2">
+                                <input type="text" disabled class="form-control bg-light" id="marca"
+                                    placeholder="Escribí la Marca...">
+                            </div>
+                            <div class="form-row mb-2">
+                                <input type="text" disabled id="modelo" class="form-control bg-light"
+                                    placeholder="Escribí el Modelo...">
+                            </div>
+                            <div class="form-row mb-2">
+                                <input type="text" disabled id="year" class="form-control bg-light"
+                                    placeholder="Escribí el año...">
+                            </div>
+                            <div class="form-row mb-2">
+                                <input type="text" disabled id='version' class="form-control bg-light"
+                                    placeholder="Escribí la version...">
+                            </div>
+                            <div class="form-row mb-2">
+                                <input type="number" id='kms' class="form-control bg-light"
+                                    placeholder="Cuántos Km tiene?">
+                            </div>
+                            <div class="form-row mb-2">
+                                <select id="inputMoneda" class="form-control bg-light col-3 col-m-2">
+                                    <option selected>ARS</option>
+                                    <option>USD</option>
+                                </select>
+                                <input type="number" class="form-control bg-light col-9 col-m-10"
+                                    placeholder="Precio del Auto" id="inputPrecio">
+                            </div>
+                            <div class="form-row mb-2">
+                                <input type="text" id='selectColor' class="form-control bg-light" placeholder="Color">
+                                <!-- <select id="color" class="form-control bg-light">
+                                    <option value="" selected="selected" hidden="" disabled=""></option>
+                                    <option label="Color" value="524" selected>Color
+                                    </option>
+                                    <option label="Aguamarina" value="582">Aguamarina</option>
+                                    <option label="Almendra" value="304">Almendra</option>
+                                    <option label="Amarillo" value="60">Amarillo</option>
+                                    <option label="Anis" value="131">Anis</option>
+                                    <option label="Arena" value="587">Arena</option>
+                                    <option label="Azul" value="59">Azul</option>
+                                    <option label="Beige" value="58">Beige</option>
+                                    <option label="Berenjena" value="554">Berenjena</option>
+                                    <option label="Bicolor" value="532">Bicolor</option>
+                                    <option label="Blanco" value="49">Blanco</option>
+                                    <option label="Bordó" value="56">Bordó</option>
+                                    <option label="Bronce" value="571">Bronce</option>
+                                    <option label="Celeste" value="61">Celeste</option>
+                                    <option label="Champagne" value="74">Champagne</option>
+                                    <option label="Cobre" value="531">Cobre</option>
+                                    <option label="Crema" value="565">Crema</option>
+                                    <option label="Dorado" value="548">Dorado</option>
+                                    <option label="Gris" value="45">Gris</option>
+                                    <option label="Gris Oscuro" value="97">Gris Oscuro</option>
+                                    <option label="Gris Plata" value="55">Gris Plata</option>
+                                    <option label="Gris Verdoso" value="207">Gris Verdoso</option>
+                                    <option label="Gris intermedio" value="256">Gris intermedio</option>
+                                    <option label="Marrón" value="62">Marrón</option>
+                                    <option label="Mostaza" value="553">Mostaza</option>
+                                    <option label="Naranja" value="129">Naranja</option>
+                                    <option label="Negro" value="5">Negro</option>
+                                    <option label="Ocre" value="92">Ocre</option>
+                                    <option label="Perlado" value="372">Perlado</option>
+                                    <option label="Rojo" value="89">Rojo</option>
+                                    <option label="Rosado" value="477">Rosado</option>
+                                    <option label="Turquesa" value="533">Turquesa</option>
+                                    <option label="Varios disponibles" value="104">Varios disponibles</option>
+                                    <option label="Verde" value="4">Verde</option>
+                                    <option label="Violeta" value="57">Violeta</option>
+                                </select> -->
+                            </div>
+                            <div class="form-row mb-2">
+                                <select id="inputCombustible" class="form-control bg-light">
+                                    <option value="" selected="selected" hidden="" disabled="disabled"
+                                        class="ng-binding">
+                                        Combustible</option>
+                                    <option label="Diesel" value="2">Diesel</option>
+                                    <option label="Eléctrico" value="6">Eléctrico</option>
+                                    <option label="GNC" value="3">GNC</option>
+                                    <option label="Hidrógeno" value="8">Hidrógeno</option>
+                                    <option label="Híbridos" value="7">Híbridos</option>
+                                    <option label="ND" value="4">ND</option>
+                                    <option label="Nafta" value="1" selected="selected">Nafta</option>
+                                    <option label="No Especifica" value="5">No Especifica</option>
+                                </select>
+                            </div>
+                            <div class="form-row mb-2">
+                                <input type="text" id='Puertas' class="form-control bg-light" placeholder="Puertas">
+                            </div>
+                        </form>
+                        <!-- Muestra los atributos adicionales-->
+                        <div class="row m-2 justify-content-center">
+                            <button id="btnAtributosAdicionales"
+                                class="btn btn-outline-success btn-sm rounded-pill">Atributos
+                                Adicionales</button>
+                        </div>
+                        <div class="container-fluid" hidden id="atributosAdicionales">
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="equipment-container">
+                                        <div class="">
+                                            <div class="row">
+                                                <div class="col-md-6 col-xs-12">
+                                                    <div class="">
+                                                        <span>Alimentación</span> <br>
+                                                        <div>
+                                                            <select id="Alimentacion" class="form-control bg-light">
+                                                                <option value="" selected="selected" class="">-
+                                                                </option>
+                                                                <option label="Turbo Diesel Intercooler" value="TDI">
+                                                                    Turbo Diesel Intercooler</option>
+                                                                <option label="Inyección Monopunto" value="SPI">
+                                                                    Inyección Monopunto</option>
+                                                                <option label="Carburador" value="CAR">Carburador
+                                                                </option>
+                                                                <option label="Bomba Diesel" value="BOM">Bomba
+                                                                    Diesel
+                                                                </option>
+                                                                <option label="Turbo Diesel" value="TD">Turbo Diesel
+                                                                </option>
+                                                                <option label="Turbo Alimentado (nafta)" value="TA"
+                                                                    selected="selected">Turbo Alimentado (nafta)
+                                                                </option>
+                                                                <option label="Inyección Multipunto" value="MPI">
+                                                                    Inyección Multipunto</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-xs-12">
+                                                    <div class="da-price-box">
+                                                        <span class="ng-binding">Motor</span> <br>
+                                                        <input placeholder="Motor" id="engineLabel" maxlength="10"
+                                                            class="form-control bg-light" type="text"
+                                                            tooltip-placement="top">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-xs-12">
+                                                    <div class="da-price-box">
+                                                        <span class="ng-binding">Dirección</span> <br>
+                                                        <div class="da-select">
+                                                            <select id="Direccion" class="form-control bg-light">
+                                                                <option value="" selected="selected" class="">-
+                                                                </option>
+                                                                <option label="Normal" value="NOR">Normal</option>
+                                                                <option label="Asistída" value="ASI"
+                                                                    selected="selected">Asistída</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                    <div class="da-price-box">
+                                                        <span class="ng-binding">Potencia (HP)</span> <br>
+                                                        <input placeholder="Potencia (HP)" id="Potencia"
+                                                            class="form-control bg-light" type="text"
+                                                            tooltip-placement="top">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                    <div class="da-price-box">
+                                                        <span class="ng-binding">Caja</span> <br>
+                                                        <div class="da-select">
+                                                            <select id="Caja" class="form-control bg-light">
+                                                                <option value="" selected="selected" class="">-
+                                                                </option>
+                                                                <option label="Manual" value="MAN" selected="selected">
+                                                                    Manual</option>
+                                                                <option label="Automática" value="AUT">Automática
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                    <div class="da-price-box">
+                                                        <span class="ng-binding">Tracción</span> <br>
+                                                        <div class="da-select">
+                                                            <select id="Cabina" class="form-control bg-light">
+                                                                <option value="" selected="selected" class="">-
+                                                                </option>
+                                                                <option label="4X4" value="4X4">4X4</option>
+                                                                <option label="Permanente las 4 ruedas" value="PER">
+                                                                    Permanente las 4 ruedas</option>
+                                                                <option label="Delantera" value="DEL"
+                                                                    selected="selected">Delantera</option>
+                                                                <option label="Trasera" value="TRA">Trasera</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                    <div class="da-price-box">
+                                                        <span class="ng-binding">Climatizador</span> <br>
+                                                        <div class="da-select">
+                                                            <select id="Caja" class="form-control bg-light">
+                                                                <option value="" selected="selected" class="">-
+                                                                </option>
+                                                                <option label="Si" value="SI">Si</option>
+                                                                <option label="No" value="NO">No</option>
+                                                                <option label="Bizona" value="BIZ">Bizona</option>
+                                                                <option label="Normal" value="NOR">Normal</option>
+                                                                <option label="Trizona" value="TRZ">Trizona</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                    <div class="da-price-box">
+                                                        <span class="ng-binding">Cabina</span> <br>
+                                                        <div class="da-select">
+                                                            <select class="form-control bg-light">
+                                                                <option value="" selected="selected" class="">-
+                                                                </option>
+                                                                <option label="Cabina simple" value="CABS">Cabina
+                                                                    simple
+                                                                </option>
+                                                                <option label="Cabina doble" value="CABD">Cabina
+                                                                    doble
+                                                                </option>
+                                                                <option label="Space Cab" value="SCAB">Space Cab
+                                                                </option>
+                                                                <option label="CADO" value="CADO">CADO</option>
+                                                                <option label="CAEX" value="CAEX">CAEX</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                    <div class="da-price-box">
+                                                        <span class="ng-binding">Sensor Estacionamiento</span> <br>
+                                                        <div class="da-select">
+                                                            <select id="SensorEstacionamiento"
+                                                                class="form-control bg-light">
+                                                                <option value="" selected="selected" class="">-
+                                                                </option>
+                                                                <option label="Alarma" value="AL">Alarma</option>
+                                                                <option label="Cámara" value="CA">Cámara</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="equipment-wrapper">
+                                                <hr>
+                                                <div class="equipment-title ng-binding mt-3">
+                                                    <h4>Equipamiento</h4>
+                                                </div>
+                                                <hr>
+                                                <div class="equipment">
+                                                    <equipment-form class="ng-scope">
+                                                        <!-- ngRepeat: (key, group) in ::vm.EnabledFeatures -->
+                                                        <div ng-repeat="(key, group) in ::vm.EnabledFeatures"
+                                                            class="row ng-scope">
+                                                            <!-- ngRepeat: (index,feature) in ::group.Features -->
+                                                        </div>
+                                                        <!-- end ngRepeat: (key, group) in ::vm.EnabledFeatures -->
+                                                        <div ng-repeat="(key, group) in ::vm.EnabledFeatures"
+                                                            class="row ng-scope">
+                                                            <!-- ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-13"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-13" title="AirBag"
+                                                                        class="ng-binding">
+                                                                        AirBag
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox style=" display:inline-block">
+                                                                    <input id="attribute-19"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-19"
+                                                                        title="Airbag cabeza conductor y acompañante"
+                                                                        class="ng-binding">
+                                                                        Airbag cabeza conductor y acompañante
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-20"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-20" title="Airbag cortina"
+                                                                        class="ng-binding">
+                                                                        Airbag cortina
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-18"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-18" title="Airbag lateral"
+                                                                        class="ng-binding">
+                                                                        Airbag lateral
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-29"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-29"
+                                                                        title="Asist. De frenado Emerg"
+                                                                        class="ng-binding">
+                                                                        Asist. De frenado Emerg
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-27"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-27"
+                                                                        title="Bloqueo Diferencial" class="ng-binding">
+                                                                        Bloqueo Diferencial
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-24"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-24" title="Control  Descenso"
+                                                                        class="ng-binding">
+                                                                        Control Descenso
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-25"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-25"
+                                                                        title="Control  Dinámico de cond"
+                                                                        class="ng-binding">
+                                                                        Control Dinámico de cond
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-23"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-23"
+                                                                        title="Control  Estabilidad" class="ng-binding">
+                                                                        Control Estabilidad
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-22"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-22" title="Control Tracción"
+                                                                        class="ng-binding">
+                                                                        Control Tracción
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-21"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-21" title="Fijación ISOFIX"
+                                                                        class="ng-binding">
+                                                                        Fijación ISOFIX
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-12"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-12" title="Frenos ABS"
+                                                                        class="ng-binding">
+                                                                        Frenos ABS
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-39"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-39"
+                                                                        title="Indicador de presión neumáticos"
+                                                                        class="ng-binding">
+                                                                        Indicador de presión neumáticos
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-30"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-30"
+                                                                        title="Reg. Par de Frenado" class="ng-binding">
+                                                                        Reg. Par de Frenado
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-28"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-28"
+                                                                        title="Rep. Elec. De Frenado"
+                                                                        class="ng-binding">
+                                                                        Rep. Elec. De Frenado
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-43"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-43" title="Run flat"
+                                                                        class="ng-binding">
+                                                                        Run flat
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-38"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-38" title="Sensor crepuscular"
+                                                                        class="ng-binding">
+                                                                        Sensor crepuscular
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-37"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-37" title="Sensor de lluvia"
+                                                                        class="ng-binding">
+                                                                        Sensor de lluvia
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-26"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-26"
+                                                                        title="Sist. Arranque Pendiente"
+                                                                        class="ng-binding">
+                                                                        Sist. Arranque Pendiente
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                        </div>
+                                                        <!-- end ngRepeat: (key, group) in ::vm.EnabledFeatures -->
+                                                        <div ng-repeat="(key, group) in ::vm.EnabledFeatures"
+                                                            class="row ng-scope">
+                                                            <!-- ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-9"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-9" title="Aire acondicionado"
+                                                                        class="ng-binding">
+                                                                        Aire acondicionado
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-32"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-32"
+                                                                        title="Asientos eléctricos" class="ng-binding">
+                                                                        Asientos eléctricos
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-42"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-42" title="Asientos térmicos"
+                                                                        class="ng-binding">
+                                                                        Asientos térmicos
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-41"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-41" title="Bluetooth"
+                                                                        class="ng-binding">
+                                                                        Bluetooth
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-33"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-33"
+                                                                        title="Computadora de abordo"
+                                                                        class="ng-binding">
+                                                                        Computadora de abordo
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-15"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-15" title="Faros Antiniebla"
+                                                                        class="ng-binding">
+                                                                        Faros Antiniebla
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-34"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-34" title="Faros de xenón"
+                                                                        class="ng-binding">
+                                                                        Faros de xenón
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-31"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-31" title="Tapizado de cuero"
+                                                                        class="ng-binding">
+                                                                        Tapizado de cuero
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-16"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-16" title="Techo Corredizo"
+                                                                        class="ng-binding">
+                                                                        Techo Corredizo
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-36"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-36" title="Techo panorámico"
+                                                                        class="ng-binding">
+                                                                        Techo panorámico
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-40"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-40" title="Volante con levas"
+                                                                        class="ng-binding">
+                                                                        Volante con levas
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                        </div>
+                                                        <!-- end ngRepeat: (key, group) in ::vm.EnabledFeatures -->
+                                                        <div ng-repeat="(key, group) in ::vm.EnabledFeatures"
+                                                            class="row ng-scope">
+                                                            <!-- ngRepeat: (index,feature) in ::group.Features -->
+                                                            <div class="col-md-4 col-sm-6 ng-scope"
+                                                                ng-repeat="(index,feature) in ::group.Features">
+                                                                <div class="checkbox" style="display:inline-block">
+                                                                    <input id="attribute-5"
+                                                                        class="da-check ng-pristine ng-untouched ng-valid"
+                                                                        ng-click="setItemFeature($event, key, group.Id)"
+                                                                        type="checkbox" ng-checked="feature.Selected"
+                                                                        ng-model="feature.Selected">
+                                                                    <label for="attribute-5" title="Es usado para carga"
+                                                                        class="ng-binding">
+                                                                        Es usado para carga
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end ngRepeat: (index,feature) in ::group.Features -->
+                                                        </div>
+                                                        <!-- end ngRepeat: (key, group) in ::vm.EnabledFeatures -->
+                                                        <div ng-repeat="(key, group) in ::vm.EnabledFeatures"
+                                                            class="row ng-scope">
+                                                            <!-- ngRepeat: (index,feature) in ::group.Features -->
+                                                        </div>
+                                                        <!-- end ngRepeat: (key, group) in ::vm.EnabledFeatures -->
+                                                    </equipment-form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-2 justify-content-center">
+                            <button href="#" id="btnPublicar" class="btn btn-outline-primary rounded-pill w-75">Elegir
+                                Portales</button>
+                        </div>
+                        <!-- Mostrar los portales con
+                            |logo| Nombre| Toggle To Activate| Radios por tipo de Publicación *4\-->
+
+                    </div>
+                    <div class="container-fluid align-items-center" id="admPortales" hidden>
+                        <h4> Portales</h4>
+                        <hr>
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Portal</th>
+                                    <th scope="col">Tipo de Publicación</th>
+                                    <th scope="col">Publicar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">deautos</th>
+                                    <td><select class="custom-select custom-select-sm" id="inputGroupSelect01">
+                                            <option selected>Destacado</option>
+                                            <option value="1">Preimum 1</option>
+                                            <option value="2">Premium 2</option>
+                                            <option value="3">Gratis</option>
+                                        </select></td>
+                                    <td>
+                                        <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-success btn-sm">
+                                                <input type="checkbox"> Publicar
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">M. Libre</th>
+                                    <td><select class="custom-select custom-select-sm" id="inputGroupSelect01">
+                                            <option selected>Destacado</option>
+                                            <option value="1">Preimum 1</option>
+                                            <option value="2">Premium 2</option>
+                                            <option value="3">Gratis</option>
+                                        </select></td>
+                                    <td>
+                                        <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-success btn-sm">
+                                                <input type="checkbox"> Publicar
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">demotores</th>
+                                    <td><select class="custom-select custom-select-sm" id="inputGroupSelect01">
+                                            <option selected>Destacado</option>
+                                            <option value="1">Preimum 1</option>
+                                            <option value="2">Premium 2</option>
+                                            <option value="3">Gratis</option>
+                                        </select></td>
+                                    <td>
+                                        <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-success btn-sm">
+                                                <input type="checkbox"> Publicar
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">Portal 4</th>
+                                    <td><select class="custom-select custom-select-sm" id="inputGroupSelect01">
+                                            <option selected>Destacado</option>
+                                            <option value="1">Preimum 1</option>
+                                            <option value="2">Premium 2</option>
+                                            <option value="3">Gratis</option>
+                                        </select></td>
+                                    <td>
+                                        <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-success btn-sm">
+                                                <input type="checkbox"> Publicar
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">Portal 6</th>
+                                    <td><select class="custom-select custom-select-sm" id="inputGroupSelect01">
+                                            <option selected>Gratis</option>
+                                            <option value="1">Preimum 1</option>
+                                            <option value="2">Premium 2</option>
+                                            <option value="3">Destacado</option>
+                                        </select></td>
+                                    <td>
+                                        <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-success btn-sm">
+                                                <input type="checkbox"> Publicar
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">Portal 7</th>
+                                    <td><select class="custom-select custom-select-sm" id="inputGroupSelect01">
+                                            <option selected>Gratis</option>
+                                            <option value="1">Preimum 1</option>
+                                            <option value="2">Premium 2</option>
+                                            <option value="3">Destacado</option>
+                                        </select></td>
+                                    <td>
+                                        <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-success btn-sm">
+                                                <input type="checkbox"> Publicar
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">Portal 8</th>
+                                    <td><select class="custom-select custom-select-sm" id="inputGroupSelect01">
+                                            <option selected>Gratis</option>
+                                            <option value="1">Preimum 1</option>
+                                            <option value="2">Premium 2</option>
+                                            <option value="3">Destacado</option>
+                                        </select></td>
+                                    <td>
+                                        <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-success btn-sm">
+                                                <input type="checkbox"> Publicar
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">Portal 9</th>
+                                    <td><select class="custom-select custom-select-sm" id="inputGroupSelect01">
+                                            <option selected>Gratis</option>
+                                            <option value="1">Preimum 1</option>
+                                            <option value="2">Premium 2</option>
+                                            <option value="3">Destacado</option>
+                                        </select></td>
+                                    <td>
+                                        <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-success btn-sm">
+                                                <input type="checkbox"> Publicar
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row m-2 justify-content-center">
+                            <a href="/dist/vehiculos.html" id="btnTerminar"
+                                class="btn btn-outline-primary rounded-pill w-75">Vehículos</a>
+                        </div>
+                    </div>
+
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+            crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
+            crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+        <Script src="/dist/js/publicar.js"></Script>
+    </body>
+
+</html>
