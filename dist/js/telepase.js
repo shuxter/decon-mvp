@@ -22,6 +22,16 @@
 	let patente = "";
 	let dni = "";
 
+		//Armar el flujo
+	$("#register").on("click", function (e) {
+		$("#registerNewPass").removeAttr("hidden");
+		$("#options").attr("hidden", true);
+	});
+	$("#activate").on("click", function (e) {
+		$("#activatePass").removeAttr("hidden");
+		$("#options").attr("hidden", true);
+	});
+	
 	//Event listener to scan car and load with picture
 	$('#fotoAuto').on('click',function(){
 		$("#dominio").val('AC897ED');
