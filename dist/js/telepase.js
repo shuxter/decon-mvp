@@ -163,10 +163,12 @@
 		}
 	});
 $("#addVehicle").on("click", function (e) {
-	$("#seguros5Pago").removeAttr("hidden");
-});
+	$("#addVehcile").removeClass("btn-outline-success");
+	$("#addVehcile").addClass("btn-success");
+})
 
 $('#cargarTCScan').on('click',function(){
+	console.log(tarjeta);
 		$('#inputCardName').val(tarjeta.nombre);
 		$('#inputCardNum').val(tarjeta.numero);
 		$('#inputExpMM').val(tarjeta.mm);
