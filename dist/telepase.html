@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>deConcesionarias</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+            crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+            crossorigin="anonymous"></script>
+    </head>
+
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">deConcesionarias</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
+                    class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
+                        aria-describedby="basic-addon2" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Principal</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
+                                aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                                data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                                aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                                data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#pagesCollapseAuth" aria-expanded="false"
+                                        aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                        data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                        data-target="#pagesCollapseError" aria-expanded="false"
+                                        aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                        data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Adm dec 001
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <!-- Voy a dividir el flujo de Seguros en Containers que voy a manejar con hidden/Visible para simular un SPA.-->
+
+                    <div class="container-fluid">
+                        <h1 class="mt-4 text-center">TelePASE</h1>
+                        <h4 class="mb-4 text-center text-secondary">Adherite Gratis</h4>
+                        <!-- Telepase 1: Datos Personals -->
+                        <!-- ----------------------------------------------------------------------------------------------------------------Aqui voy a realizar la carga de los datos de la Persona -->
+                        <div class="container-fluid align-items-center" id="cargarPersonas">                            
+                            <div class="text-center">
+                                <h5>Datos Personales</h5>
+                            </div>
+                            <!-- Modal de DNI -->
+                            <div class="modal fade" id="dniModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-block">
+                                            <h5 class="modal-title text-center" id="dniModalLabel">Escaneo del
+                                                DNI</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <video height='450' autoplay muted playsinline controls>
+                                                <source src="/dist/assets/img/dniScan.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Rechazar</button>
+                                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                id="cargarDNIScan">Aceptar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-10 pl-0">
+                                    <input type="text" id='dni' class="form-control bg-light border-danger"
+                                    placeholder="DNI">
+                                </div>
+                                <div class="col-2">
+                                <button type="button" id="fotoDNI" class="btn-success rounded-circle btn-sm"
+                                    data-toggle="modal" data-target="#dniModal"><i class="fa fa-camera"
+                                        aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='nombre' class="form-control bg-light"
+                                    placeholder="Escribí tu nombre y Apellido">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="date" disabled id='dob' class="form-control bg-light"
+                                    placeholder="Escribí tu Fecha de Nacimiento ...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='domicilio' class="form-control bg-light"
+                                    placeholder="Escribí tu Domicilio...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='localidad' class="form-control bg-light"
+                                    placeholder="Escribí Localidad...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='provincia' class="form-control bg-light"
+                                    placeholder="Escribí Provincia...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id='cp' class="form-control bg-light"
+                                    placeholder="Escribí Codigo Postal...">
+                            </div>                            
+                            <div class="row mb-2">
+                                <input type="text" id="tel" class="form-control bg-light" placeholder="Teléfono...">
+                            </div>
+                            <div class="row my-2">
+                                <input type="email" id="mail" class="form-control bg-light" placeholder="Email...">
+                            </div>
+                            <div class="row my-2">
+                                <input type="email" id="confirmEmail" class="form-control bg-light" placeholder="Confirmar Email...">
+                            </div>                                                        
+                            <div class="row justify-content-center mb-3">
+                                <!-- Default switch -->
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input confDatos"
+                                        id="customSwitchesData">
+                                    <label class="custom-control-label" for="customSwitchesData">Confirmar Datos</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- telepase 2: Datos Impositivos -->
+                        <div class="container-fluid align-items-center mb-3" id="cargarImpositivo">
+                            <div class="text-center">
+                                <h5>Datos Impositivos</h5>
+                                <h6>(para P.J.)</h6>
+                                <div class="row mb-2">
+                                    <label class="col-2" for="iva">IVA: </label>
+                                    <select class=" col-10 form-control" id="iva">
+                                    <option selected="selected" value="-2147483648">Seleccione</option>
+                                    <option>Responsable Inscripto</option>
+                                    <option>Exento</option>
+                                    <option>Monotributo</option>                                    
+                                    </select>
+                                </div>
+                                <div class="row mb-2">                                    
+                                    <label class="col-2" for="ddlIIBB">IIBB: </label>
+                                    <select name="ddlIIBB" id="ddlIIBB" title="IIBB" class="col-10 form-control">
+                                        <option selected="selected" value="-2147483648">Seleccione</option>
+                                        <option value="00">CONT CAPITAL FEDERAL</option>
+                                        <option value="01">CONT BUENOS AIRES</option>
+                                        <option value="02">CONT CATAMARCA</option>
+                                        <option value="03">CONT CORDOBA</option>
+                                        <option value="04">CONT CORRIENTES</option>
+                                        <option value="05">CONT ENTRE RIOS</option>
+                                        <option value="98">NO ACREDITA CONDICION FRENTE A IIBB</option>
+                                        <option value="99">NO ALCANZADO</option>
+                                        <option value="CM">CONVENIO MULTILATERAL</option>
+                                    </select>                                                                            
+                                </div>
+                                <div class='row mb-2'>
+                                    <label for="numIIBB" class="col-2"></label>
+                                    <input id="numIIBB" type="text" class="col-10 form-control" placeholder="Número de IIBB"></input>
+                                </div>
+                                <div class='row mb-2'>
+                                    <label for="apod" class="col-2"></label>
+                                    <input id="apod" type="text" class="col-10 form-control" placeholder="Apoderado" disabled></input>                                    
+                                </div>
+                                <div class='row mb-2'>
+                                    <label for="dni-apod" class="col-2"></label>
+                                    <input id="dni-apod" type="text" class="col-10 form-control" placeholder="DNI Apoderado" disabled></input>
+                                </div>                                
+                            </div>                                                                                    
+                        </div>                        
+                        <!-- telepase 3: Datos del Vehiculo -->
+                        <!-- ----------------------------------------------------------------------------------------------------------------Aqui vamos a cargar el Auto -->
+                        <div class="container-fluid align-items-center mt-5" id="cargarVehiculos">                        
+                            <div class="text-center">
+                                <h5>Datos del Véhiculo</h5>
+                            </div>
+                            <!-- Modal de Carga -->
+                            <div class="modal fade" id="carModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-block">
+                                            <h5 class="modal-title text-center" id="carModalLabel">Escaneo del
+                                                Dominio</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <video height='450' autoplay muted playsinline controls>
+                                                <source src="/dist/assets/img/kiaScan.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Rechazar</button>
+                                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                id="cargarAutoScan">Aceptar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-10 pl-0">
+                                    <input type="text" id="dominio" class="form-control bg-light border-danger"
+                                    placeholder="Dominio">
+                                </div>
+                                <div class="col-2">
+                                <button type="button" id="fotoAuto" class="btn-success rounded-circle btn-sm"
+                                    data-toggle="modal" data-target="#carModal"><i class="fa fa-camera"
+                                        aria-hidden="true"></i></button>
+                            </div>
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled class="form-control bg-light" id="marca"
+                                    placeholder="Escribí la Marca...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id="modelo" class="form-control bg-light"
+                                    placeholder="Escribí el Modelo...">
+                            </div>
+                            <div class="row mb-2">
+                                <input type="text" disabled id="year" class="form-control bg-light"
+                                    placeholder="Escribí el año...">
+                            </div>
+                            <div class="row mb-3">
+                                <input type="text" disabled id='color' class="form-control bg-light"
+                                    placeholder="Elegi el color...">
+                            </div>
+                            
+                            <!-- Agregar link aquei para que te lleve a la pagina de persona!-->
+                            <div class="row m-2 justify-content-center">
+                                <a href="#" id="addVehicle" class="btn btn-success btn-lg btn-block">Agregar</a>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Seguros 5: Portal de Pago -->
+                        <!-- ----------------------------------------------------------------------------------------------------------------Aqui vamo sa mostrar una pagina de Pagos -->
+                        <div class="container-fluid align-items-center mt-5" id="seguros5Pago">
+                            <!-- Nombre en Tarjeta + Input
+                            Card Number en Grupos de 4
+                        Expiry date [MM] [YY] [CVC]
+                    Pais CP  -->
+                    <div class="text-center">
+                                <h5>Medio de Pago</h5>
+                            </div>                            
+                            <div class="row justify-content-center my-2" id="divScanTC">
+                                
+                                <button type="button" id="btnScanTC" class="btn-outline-danger rounded btn-sm"
+                                    data-toggle="modal" data-target="#TCModal"><i class="fa fa-camera"
+                                        aria-hidden="true"></i><br>Escanear TC</button>
+                                <!-- Modal de DNI -->
+                                <div class="modal fade" id="TCModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header d-block">
+                                                <h5 class="modal-title text-center" id="TCModalLabel">Escaneo del
+                                                    TC</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <video height='450' autoplay muted playsinline controls>
+                                                    <source src="/dist/assets/img/scanTC.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Rechazar</button>
+                                                <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                    id="cargarTCScan">Aceptar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="mt-3" hidden id="formCBU">
+                                <div class="form-group row">
+                                    <label for="inputCBU" class="col-2 col-form-label">CBU</label>
+                                    <div class="col-10">
+                                        <input type="number" class="form-control" id="inputCBU" placeholder="CBU">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputTitular" class="col-2 col-form-label">Titular</label>
+                                    <div class="col-10">
+                                        <input type="text" class="form-control" id="inputTitular" placeholder="Titular">
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="align-items-center mt-3" id="formTC">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCardName">Nombre en la Tarjeta</label>
+                                        <input type="text" class="form-control" id="inputCardName">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCardNum">Numero de Tarjeta</label>
+                                        <input type="text" class="form-control" id="inputCardNum"
+                                            placeholder="0000 0000 0000 0000">
+                                    </div>
+                                    <div class="form-group col-md-1 col-3">
+                                        <label for="inputExpMM">Vto.</label>
+                                        <input type="number" class="form-control" id="inputExpMM" placeholder="MM">
+                                    </div>
+                                    <div class="form-group col-md-1 col-3">
+                                        <label for="inputExpAA" class="text-white">1 </label>
+                                        <input type="number" class="form-control" id="inputExpAA" placeholder="AA">
+                                    </div>
+                                    <div class="form-group col-md-4 col-6">
+                                        <label for="inputCardCVC">CVC</label>
+                                        <input type="password" class="form-control" id="inputCardCVC" placeholder="CVC">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    
+                                        <label for="dniTit" class="col-4">DNI Titular: </label>
+                                        <input type="text" id='dniTit' class="col-8"></input>
+                                    
+                                </div>
+                            </form>
+
+                            <!-- <div class="row m-2 justify-content-center">
+                                <a href="#" id="seguroPago"
+                                    class="btn btn-outline-success btn-lg btn-block rounded">Confirmar
+                                    Operación</a>
+                            </div> -->
+                            <!-- Button trigger modal -->
+                            <button type="button" class="mt-3 btn btn-outline-success btn-lg btn-block rounded"
+                                data-toggle="modal" data-target="#exampleModal">
+                                Confirmar Operación
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Terminos & Condiciones</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima distinctio
+                                            nihil nisi? Tenetur eos pariatur accusamus! Beatae molestias, autem libero
+                                            placeat expedita laborum fuga!
+                                            <br>Sequi ullam quisquam earum sed ipsa?
+                                            Delectus pariatur necessitatibus, ducimus reiciendis quas unde eum
+                                            laboriosam praesentium, corrupti, placeat ab dignissimos mollitia. Deserunt
+                                            pariatur minus soluta laboriosam harum.<br> Itaque ducimus ab molestias
+                                            repudiandae aliquid sunt! Sit, eos.
+                                            Dolorem, nobis ducimus labore quisquam sint corporis. Maiores doloremque eum
+                                            veritatis quas inventore error ea? Corporis similique dolorem quae. Unde
+                                            optio cum libero numquam molestias sapiente, consequuntur distinctio
+                                            reiciendis doloremque?
+                                            <br>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima distinctio
+                                            nihil nisi? Tenetur eos pariatur accusamus! Beatae molestias, autem libero
+                                            placeat expedita laborum fuga!
+                                            <br>Aceptas los T&Cs de la poliza?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Rechazar</button>
+                                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                id="aceptarTCs">Aceptar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; deConcesionarias 2020</div>
+                            <div>
+                                <a href="#">Política de Privacidad</a>
+                                &middot;
+                                <a href="#">Terminos &amp; Condiciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+            crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
+            crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+        <Script src="/dist/js/telepase.js"></Script>
+    </body>
+
+</html>
